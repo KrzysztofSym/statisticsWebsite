@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+/*===== VARIABLES CSS =====*/
+
+:root {
+    --h1-fs: 2rem;    --h1-fs-media: 3rem; 
+    --h2-fs: 1.5rem;  --h2-fs-media: 2rem;
+    --h3-fs: 1.3rem;  --h3-fs-media: 1.8rem;
+    --h4-fs: 1rem;  --h4-fs-media: 1.5rem;
+    --p-fs: .75rem;    --p-fs-media: 1.1rem;
+    --a-fs: .7rem;    --a-fs-media: 1.1rem;
+    --li-fs: .7rem;   --li-fs-media: 1.1rem;    
+
+    --clr-bg-main: #f3f4fb;
+    --clr-bg-pri: #e5e7f6;
+    --clr-bg-sec: #f6e4f5;
+    --clr-bg-thi: #fae5e5;
+    --clr-acc-main: #00bea6;
+    --clr-acc-pri: #009885;
+    --clr-acc-sec: #33cbb8;
+    --clr-acc-thi: #d80000;
+    --clr-acc-four: #ad0000;
+    --clr-acc-fif: #e03333;
+    --clr-text-main: #67696a;
+    --clr-text-pri: #36454F;  
+    
+    --shadow-color: #33cbb8;    
+    --main-ff: 'Poppins', sans-serif;
+  }
+
+/*===== BASE =====*/
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--main-ff);
+    font-size: var(--p-fs);
+    background: var(--clr-bg-main);
+    color: var(--clr-text-main);
+    width: 100%;
+    min-height: 100vh;
+}   
+
+h1, h2, h3, h4,
+p, a, li {
+    margin: 0;
+}
+
+h1 {
+    font-size: var(--h1-fs);
+}
+
+h2 {
+    font-size: var(--h2-fs);
+}
+
+h3 {
+    font-size: var(--h3-fs);
+}
+
+h4 {
+    font-size: var(--h4-fs);
+    font-weight: 600;
+}
+
+p, a, li, button {
+    font-size: var(--p-fs);
+    font-weight: 600;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: underline;
+    color:  #115599;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+    /* animation: scaleUp 1s ease-in-out;
+    transform-origin: center center; */
+
+/*===== BUTTONS =====*/
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    background-color:  transparent;
+    color: var(--clr-text-main);
+    padding: .5rem;
+    font-size: var(--p-fs);
+    margin-top: 1rem;
+    border: 1px solid lightgray;
+    border-radius: 10rem;
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.card:nth-of-type(3) .btn {
+    background-color: #fff;
+}
+
+  
+.btn:hover {
+    box-shadow: 0 10px 36px rgba(0, 0, 0, .15);
+}
+
+.btn:active {
+    scale: .97;
+}
+
+/*===== PROJECT CSS =====*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    min-width: 380px;
+    width: 90%;
+    background-color: #fff;
+    position: relative;
+    animation: scaleUp 1s ease-in-out;
+    transform-origin: center center;
+    border: 4px solid #000;
+    border-radius: 1rem;
+    padding: 4rem 2rem;
+    overflow: hidden;
+    box-shadow: 0px 8px 30px -10px var(--clr-text-main);
+}
+
+.container > h4 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.container form {
+    width: 50%;
+    min-width: 250px;
+    padding: 1rem;
+    border-radius: .3rem;
+    margin: 0 auto;
+    border: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.container input[type="text"] {
+    border: none;
+    width: 100%;
+}
+
+.container input[type="text"]:focus {
+    outline: none;
+}
+
+.container form i {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.card:hover {
+    scale: 1.05;
+}
+
+.cards, .items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+    gap: 1rem;
+}
+
+.card, .item {
+    width: 250px;
+    padding: 1.5rem 1rem;
+    border-radius: .4rem;
+    transition: .3s;
+}
+
+.card:nth-child(1) { background-color: var(--clr-bg-pri); }
+.card:nth-child(2) { background-color: var(--clr-bg-sec); }
+.card:nth-child(3) { background-color: var(--clr-bg-thi); }
+
+.card > h4, .item h4 {
+    margin-bottom: .5rem; }
+
+.item a {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.container form { animation: fromTop .5s ease-in-out .5s backwards}
+.container > h4 { animation: fromTop .5s ease-in-out .7s backwards}
+.card:nth-of-type(1) { animation: showUp .5s ease-in-out .7s backwards ; }
+.card:nth-of-type(2) { animation: showUp .5s ease-in-out .9s backwards ; }
+.card:nth-of-type(3) { animation: showUp .5s ease-in-out 1s backwards ; }
+.item:nth-of-type(1) { animation: showUpT .5s ease-in-out 1.2s backwards ; }
+.item:nth-of-type(2) { animation: showUpT .5s ease-in-out 1.4s backwards ; }
+.item:nth-of-type(3) { animation: showUpT .5s ease-in-out 1.6s backwards ; }
+
+@keyframes showUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes showUpT {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fromTop {
+    from {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
